@@ -12,7 +12,7 @@ class Movie {
 //add a movie OBJECT to the allMovies array
 let addMovie = (movie) => {
     allMovies.push(movie);
-    console.log("A new movie is added");
+    window.print("A new movie is added");
 }
 
 
@@ -20,15 +20,15 @@ let addMovie = (movie) => {
 //Display the total number of movies in allMovies array
 let printMovies = () => {
     if (allMovies.length === 0) {
-        console.log('No movies in the list.');
+        window.print('No movies in the list.');
       } else {
-        console.log('Printing all movies....');
+        window.print('Printing all movies....');
         allMovies.forEach((movie, index) => {
-          console.log(
+          window.print(
             `Title: ${movie.title}, Rating: ${movie.rating}, Watched: ${movie.haveWatched ? 'Yes' : 'No'}`
           );
         });
-        console.log(`\nYou have ${allMovies.length} movies total`);
+        window.print(`\nYou have ${allMovies.length} movies total`);
     }
 }
 
@@ -38,15 +38,15 @@ let printMovies = () => {
 let highRatings = (rating) => {
     const highRatedMovies = allMovies.filter(movie => movie.rating > rating);
     if (highRatedMovies.length === 0) {
-        console.log(`No movies with a rating higher than ${rating}.`);
+        window.print(`No movies with a rating higher than ${rating}.`);
     } else {
-        console.log('printing movie that has a rating higher than 3.5');
+        window.print('printing movie that has a rating higher than 3.5');
         highRatedMovies.forEach((movie, index) => {
-            console.log(
+            window.print(
                 `Title: ${movie.title}, Rating: ${movie.rating}, Watched: ${movie.haveWatched ? 'Yes' : 'No'}`
             );
         });
-        console.log(`In total, there are ${highRatedMovies.length} matches`);
+        window.print(`In total, there are ${highRatedMovies.length} matches`);
     }
 }
 
@@ -56,9 +56,9 @@ let changeWatched = (title) => {
     const movieToToggle = allMovies.find(movie => movie.title === title);
     if (movieToToggle) {
         movieToToggle.haveWatched = !movieToToggle.haveWatched;
-        console.log(`changing the status of the movie...`);
+        window.print(`changing the status of the movie...`);
     } else {
-        console.log(`Movie '${title}' not found in the list.`);
+        window.print(`Movie '${title}' not found in the list.`);
     }
 }
 
@@ -72,37 +72,37 @@ let z = new Movie("Zootopia", 4.5, true);
 
 allMovies.push(x,y,z);
 
-/*replace console.log with display on web page*/
-console.log("----------------");
-console.log("running program......");
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
+window.print("running program......");
+window.print("----------------");
 printMovies();
 
 
 let movie1 = new Movie("Parasite", 2, false);
 
-/*replace console.log with display on web page*/
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
 addMovie(movie1);
-console.log("----------------");
+window.print("----------------");
 
 
 
 changeWatched("Spiderman");
-/*replace console.log with display on web page*/
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
 
 printMovies();
 
-/*replace console.log with display on web page*/
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
 
 changeWatched("Spiderman");
-/*replace console.log with display on web page*/
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
 
 printMovies();
-/*replace console.log with display on web page*/
-console.log("----------------");
+/*replace window.print with display on web page*/
+window.print("----------------");
 
 highRatings(3.5);
