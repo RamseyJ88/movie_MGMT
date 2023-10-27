@@ -1,5 +1,9 @@
 let allMovies = [];
 
+function display(message) {
+    document.getElementById("result").innerHTML += message + "<br>";
+}
+
 //Define a movie class with parameters title (string), rating (number) and haveWatched (boolean)
 class Movie {
     constructor(title, rating, haveWatched) {
